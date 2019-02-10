@@ -1,0 +1,116 @@
+<!--<load scripts>-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<!--</load scripts>-->
+
+<!--I would recommend the following be added to seperate js file with jquery code already there. I would also recommend cleaning up the preexisting code that you have with jquery so that the code is shorter, but up to you-->
+
+<style>
+    div.ui-datepicker
+    {
+        font-size: 15px;
+    }
+    #date
+    {
+        background-color: #FFF;
+        outline: none;
+        border: 1px solid #09c;
+    }
+    #sub
+    {
+        margin: 10px;
+    }
+    #warn
+    {
+        display: none;
+        font-weight: 300;
+    }
+</style>
+
+<script>
+    $(document).ready(function ()
+    {
+        $("#date").datepicker(
+        {
+            dateFormat: "yy-mm-dd"
+        });
+
+        $("#sub").click(function (e) //or you can do onChange, whatever suits you
+        {
+            $("#warn").fadeOut(100, function()
+            {
+                var error = false;
+                var errmsg = "";
+                var value = $("#date").val();
+                var v = value.split("-");
+                //error checking
+                if (v.length != 3)
+                {
+                    error = true;
+                    errmsg = "Are you sure you formatted your date correctly? (Format: YYYY-MM-DD) (yes, with the dashes)";
+                }
+                else if (v[2].length != 2 || v[1].length != 2 || v[0].length != 4)
+                {
+                    if (v[0].length != 4)
+                    {
+                        error = true;
+                        errmsg = "Please use 4-digit year, e.g. 1998 instead of 98";
+                    }
+                    if (v[2].length != 2 || v[1].length != 2)
+                    {
+                        if (error) errmsg += "&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;";
+                        error = true;
+                        errmsg += "Please use 2-digit month and date, e.g. 09 instead 9";
+                    }
+                }
+                else
+                {
+                    if (parseInt(v[1]) > 12)
+                    {
+                        error = true;
+                        errmsg = "Are you sure you formatted your date correctly? (Format: YYYY-MM-DD)";
+                    }
+                    else if (parseInt(v[1]) < 1 || parseInt(v[2]) > 31 || parseInt(v[2]) < 1)
+                    {
+                        error = true;
+                        errmsg = "Are you sure you entered a valid date?";
+                    }
+                }
+                //display error to user
+                if (error)
+                {
+                    $("#warn").html(errmsg).css("color", "#FF0000").fadeIn(500);
+                    $("#date").stop(true, false).animate(
+                    {
+                        "background-color": "#FF6060"
+                    }, 200, function ()
+                    {
+                        $("#date").stop(true, false).animate(
+                        {
+                            "background-color": "#FFFFFF"
+                        }, 200);
+                    });
+                }
+                else
+                {
+                    $("#warn").html("&nbsp;&#10004;").css("color", "#058907").fadeIn(500);
+                    $("#date").stop(true, false).animate(
+                    {
+                        "background-color": "#83FF2B"
+                    }, 200, function ()
+                    {
+                        $("#date").stop(true, false).animate(
+                        {
+                            "background-color": "#FFFFFF"
+                        }, 200);
+                    });
+                } 
+            });
+        });
+    });
+</script>
+
+Date: <input type="text" id="date" value="2099-12-31" placeholder="Date (YYYY-MM-DD)"> <span id="warn"></span> <!--style this yourself to fit the website design-->
+<br>
+<input type="button" id="sub" value="Submit">

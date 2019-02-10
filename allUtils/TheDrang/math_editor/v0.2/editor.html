@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<div id="load" style="height: 39px; width: 240px; background-color: #fff; z-index: 150; position: fixed; margin: auto; left: 0px; right: 0px; top: 0px; bottom: 0px; border-radius: 10px; border: 1px solid #09c;"><img src="ajax-loader.gif" id="loader" alt="loading..." style="padding: 10px;"></div>
+<div id="overlay"></div>
+<!--in case you are wondering, this is supposed to load before anything loads, thats why its in this position with inline style, replace values/loader as suitable-->
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Math Editor v0.2</title>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="//requirejs.org/docs/release/2.1.15/minified/require.js"></script>
+        <script src="//cdn.aloha-editor.org/current/lib/aloha.js"></script>
+        <link rel="stylesheet" type="text/css" href="//cdn.aloha-editor.org/current/css/aloha.css">
+
+        <script src="editor.js"></script>
+        <link rel="stylesheet" type="text/css" href="editor.css">
+    </head>
+    <body>
+        <div id="editor">
+            <h3>Set your Question below:</h3>
+            <i>Currently this only supports TeX & ASCII Math</i>
+            <input type="button" value="Insert Math" id="insm">
+            <div id="txtarea">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut leo neque, viverra sed enim a, suscipit lacinia ex. Praesent ac leo maximus, sollicitudin metus eu, consectetur lacus. Maecenas in nibh lacinia, mollis augue vitae, scelerisque felis. In ultrices urna vestibulum velit cursus rutrum nec eu est. Praesent eu imperdiet massa. Sed gravida arcu eu augue lobortis, ut hendrerit dolor auctor. Phasellus fermentum magna vitae tortor malesuada elementum. Quisque nisi enim, aliquam pretium ipsum quis, imperdiet luctus erat. Praesent vehicula dolor vel egestas mattis. Nam sit amet consequat ante, sed euismod mi. Nulla pharetra id ipsum et interdum. Vestibulum vel diam ornare ligula pellentesque facilisis. Mauris et gravida dolor. Sed urna nulla, molestie ac magna ac, auctor mollis turpis.</p>
+
+                <p>Sed dapibus justo dui, in porttitor odio mattis convallis. Integer feugiat velit sed sollicitudin maximus. Nunc rhoncus feugiat ipsum et volutpat. Vestibulum eu neque id nunc sodales bibendum et a dui. Etiam a ex tellus. Maecenas malesuada quis urna vitae consectetur. Nullam faucibus sapien at condimentum tempor. Integer sagittis sapien eget sapien mollis, tempor varius purus tincidunt. Donec in rhoncus ante. Vestibulum faucibus sapien vel arcu ullamcorper lacinia. Ut at justo convallis lectus bibendum tincidunt. Sed porttitor venenatis turpis nec laoreet. Phasellus pharetra ullamcorper risus sit amet aliquet.</p>
+            </div>
+        </div>
+    </body>
+</html>

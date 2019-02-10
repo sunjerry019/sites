@@ -1,0 +1,64 @@
+
+
+
+/*
+    Remember to style the fonts to suit the website
+*/
+
+
+
+
+/*<body>*/
+body
+{
+    margin: 0;
+}
+.txtarea
+{
+    height:500px;
+    width: 1000px;
+    border: 1px solid #09c;
+    color: #aaa;
+    overflow: scroll;
+    padding: 10px;
+}
+/*</body>*/
+
+/*<overlays>*/
+#overlay
+{
+    z-index: 100;
+    background-color: rgba(0,0,0,0.7);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+#language
+{
+    z-index: 101;
+    background-color: #fff;
+    height: 110px;
+    width: 300px;
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #09c;
+    display: none;
+}
+#language h3
+{
+    margin: 0px;
+    margin-bottom: 1px;
+}
+#language select
+{
+    margin-top: 10px;
+}
+
+#language #rmbwrap
+{
+    margin-top: 10px;
+}
+/*</overlays>*/

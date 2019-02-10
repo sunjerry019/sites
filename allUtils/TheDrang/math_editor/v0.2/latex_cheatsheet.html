@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<div id="load" style="height: 39px; width: 240px; background-color: #fff; z-index: 150; position: fixed; margin: auto; left: 0px; right: 0px; top: 0px; bottom: 0px; border-radius: 10px; border: 1px solid #09c;"><img src="ajax-loader.gif" id="loader" alt="loading..." style="padding: 10px;"></div>
+<div id="overlay"></div>
+<!--in case you are wondering, this is supposed to load before anything loads, thats why its in this position with inline style, replace values/loader as suitable-->
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>LaTeX Cheatsheet</title>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="cheatsheet.css" type="text/css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="cheatsheet.js"></script>
+    </head>
+    <body>
+        <div id="flexcontainer">
+            <div id="sidebar">
+                <h3 data-id="start">LaTeX Cheatsheet for Math</h3>
+                <h4>The Basics</h4>
+                <div class="item" data-id="whatislatex">What is LaTeX/TeX?</div>
+                <div class="item" data-id="mathematicsenv">Mathematics Environment</div>
+                <div class="item" data-id="symbols">Symbols</div>
+                <h4>Others</h4>
+                <div class="item" data-id="textinmath">Adding Text to Math Equations</div>
+                <a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics" target="_blank"><h4>Wikibooks Page on Mathematics in LaTeX</h4></a>
+            </div>
+
+            <div id="maincontent">
+                <div id="start" class="containers">
+                    <h1>Welcome to the LaTeX/TeX Cheatsheet <small>for Math</small></h1>
+                    <p>This is a cheatsheet for typing Math using the LaTeX or TeX syntax. Click on the links on the right for more detailed information.</p>
+                    <p>Many of the contents here are adapted extracted from Wikibooks (<a href="https://en.wikibooks.org/wiki/LaTeX">https://en.wikibooks.org/wiki/LaTeX</a>, etc.)</p>
+                    <p>Note that with the math renderer for this site, not all LaTeX/TeX macros are supported. The main ones supported are those that deal with Math, not text. </p>
+                    <p class="block">For example, \(\begin{enumerate}...\end{enumerate}\) is not supported, as you can see from the misrendering, which originally is supposed to create a list</p>
+                    <p>If you want everything, please go to <a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">https://en.wikibooks.org/wiki/LaTeX/Mathematics</a>. The stuff over here is just as a cheatsheet and therefore does not provide all of the documentation.</p>
+                    <p>If all else fails and you have no idea how to type it out. Please approach our good friend <a href="//google.com">Google</a>.</p>
+                    <div id="#logodiv"><img src="//upload.wikimedia.org/wikipedia/commons/9/92/LaTeX_logo.svg" alt="LaTeX" id="logo"></div>
+                </div>
+
+                <div id="whatislatex" class="containers">
+                    <h1>What is LaTeX/TeX?</h1>
+                    <p>TeX is a computer program for typesetting documents, created by Donald Knuth. It takes a suitably prepared computer file and converts it to a form which may be printed on many kinds of printers, including dot-matrix printers, laser printers and high-resolution typesetting machines. LaTeX is a set of macros for TeX that aims at reducing the user's task to the sole role of writing the content, LaTeX taking care of all the formatting process.</p>
+                    <p>With this type of markup language, and the use of plugins such as <a href="http://www.mathjax.org/">MathJax</a>, one is able to produce really nice typesetted math and content that is consistent throughout many browsers. The math that is typesetted is what one would see on textbooks, worksheets, etc. </p>
+                    <p>Because of these reasons, we chose to use LaTeX markup to reliably write and display math on the web. If you have never seen or heard or used LaTeX or TeX in your whole life, fret not, it is easy to learn, afterall you can always comeback to this cheatsheet to properly format your math, or any text at all that you want rendered in LaTeX/TeX.</p>
+                    <p>For example:
+                        <span>$${n! \over k!(n-k)!} = {n \choose k}$$</span>
+                        <code class="center">{n! \over k!(n-k)!} = {n \choose k}</code>
+                        <span>$$\frac{\frac{1}{x}+\frac{1}{y}}{y-z}$$</span>
+                        <code class="center">\frac{\frac{1}{x}+\frac{1}{y}}{y-z}</code>
+                    </p>
+                </div>
+                
+                <div id="mathematicsenv" class="containers">
+                    <h1>Mathematics Environment</h1>
+                    <p>This part you <b>mainly do not have to worry</b> because the editor automatically for you depending on your choice of displayed or inline math. However, this section is here for you information, or when you want to edit the source directly</p>
+                    <p>To define and identify a math equation or anything that you want rendered by MathJax, use the following to start and end</p>
+                    <table>
+                        <tr>
+                            <td>Displayed Math</td>
+                            <td><pre>\[ ... \]</pre></td>
+                            <td><pre>$$ ... $$</pre></td>
+                        </tr>
+                        <tr>
+                            <td>inline Math</td>
+                            <td><pre>\( ... \)</pre></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <p><span class="inline">$ ... $</span> is not defined as math delimiters by default for inline math due to its often appearance in non-mathematical settings.</p>
+                    <p>Due to HTML using &lt; and &gt; as braces for tags, when you type \(x \lt y\), it is recommended and often necessary to type <span class="inline">\lt</span> for &lt; and <span class="inline">\gt</span> for &gt;.</p>
+                    <p>If you are typing text normally, you are said to be in <i>text mode</i>, but while you are typing within one of those mathematical environments, you are said to be in <i>math mode</i>, that has some differences compared to the <i>text mode</i>:</p>
+                    <ol>
+                        <li>Most spaces and line breaks do not have any significance, as all spaces are either derived logically from the mathematical expressions, or have to be specified with special commands such as <span class="inline">\quad</span></li>
+                        <li>Empty lines are not allowed. Only one paragraph per formula.</li>
+                        <li>Each letter is considered to be the name of a variable and will be typeset as such. If you want to typeset normal text within a formula (normal upright font and normal spacing) then you have to enter the text using <a href="#textinmath">dedicated commands</a>.</li>
+                    </ol>
+                </div>
+
+                <div id="symbols" class="containers">
+                    <h1>Symbols</h1>
+                    <p>You can directly type the following symbols:</p>
+                    <p class="block" style="font-family: Consolas, monospace">+ - = ! / ( ) [ ] < > | ' :</p>
+                    <p>For the rest, specific commands/markup has to be written. You can refer to the following sites for more information. For any of these, you can ignore the <span class="inline">\include{}</span> line.</p>
+                    <ul>
+                        <li><a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols" target="_blank">https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols</a></li>
+                        <li><a href="http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Symbols" target="_blank">http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Symbols</a></li>
+                        <li><a href="http://detexify.kirelabs.org/" target="_blank">http://detexify.kirelabs.org/</a></li>
+                        <li><a href="http://download.nus.edu.sg/mirror/CTAN/info/symbols/comprehensive/symbols-a4.pdf" target="_blank">http://download.nus.edu.sg/mirror/CTAN/info/symbols/comprehensive/symbols-a4.pdf</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <span>Cheatsheet done by Y and J 2015. Unless otherwise noted, this work is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License (CC BY 4.0). </a></span>
+        </footer>
+    </body>
+</html>

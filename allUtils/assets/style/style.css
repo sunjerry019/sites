@@ -1,0 +1,19 @@
+.table
+{
+    display: table;
+}
+.row
+{
+    display: table-row;
+}
+.box
+{
+    padding:10px;
+    margin:5px;
+    display: table-cell;
+}
+.yellow
+{
+    border: 1px solid #ffd800;
+    background-color: #FEFF49;
+}

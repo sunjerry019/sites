@@ -1,0 +1,12 @@
+# robotstxt.org/
+
+User-agent: *
+Disallow: /archive/
+Disallow: /.quarantine/
+Disallow: /.tmb/
+Disallow: /images/
+Disallow: /jquery-ui-1.11.2.custom/
+Disallow: /s/
+Disallow: /js/
+Disallow: /updatefiles/
+Disallow: /errorPages/

@@ -1,0 +1,26 @@
+on latex change process input
+small x to close the eqn editor
+error when screensize is not right and suggest just typing in latex
+
+create updateemail, resend verification if pw updated and still not verified
+
+verifyEmail: sysadmin
+if sysadmin, can verify others email, can send verification email for them.
+id=? (base64_encode)
+a sysadmin page upon login
+
+profiles
+favicon
+
+
+eh your posting system not very intuitive leh
+you should give us the options first
+like choose:
+
+post update
+post quiz
+post video
+etc
+then redirect us to a page specifically for posting the objective content
+
+so like the expiry date needs to be more mandatory/have a better default

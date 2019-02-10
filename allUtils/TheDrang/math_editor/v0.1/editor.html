@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<div id="load" style="height: 39px; width: 240px; background-color: #fff; z-index: 150; position: fixed; margin: auto; left: 0px; right: 0px; top: 0px; bottom: 0px; border-radius: 10px; border: 1px solid #09c;"><img src="ajax-loader.gif" id="loader" alt="loading..." style="padding: 10px;"></div>
+<div id="overlay"></div>
+<!--in case you are wondering, this is supposed to load before anything loads, thats why its in this position with inline style, replace values/loader as suitable-->
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Math Editor V0.1</title>
+        <link href="editor.css" type="text/css" rel="stylesheet">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="editor.js"></script>
+    </head>
+    <body>
+        <!-- For language perhaps add another column in SQL to store their default language, then this dialogbox u need not put at every page load I have added storage in localstorage-->
+        <div id="language">
+            <h3>Please select a language</h3>
+            <small>You can change it later</small>
+            <br>
+            <select id="lang">
+                <option value="TeX">TeX</option>
+                <option value="MML">MathML</option>  
+            </select>
+            <input type="button" id="langbtn" value="OK">
+            <br>
+            <div id="rmbwrap"><input type="checkbox" id="rmb"> Remember this and never ask me again</div>
+        </div>
+
+        <!--Main Math Editor-->
+        <div id="matheditor">
+            <div class="txtarea" contenteditable>Write Math Here</div>
+            <div id="preview"></div>
+            <small>Powered by <a href=http://www.mathjax.org/">MathJax</a></small>
+        </div>
+    </body>
+</html>

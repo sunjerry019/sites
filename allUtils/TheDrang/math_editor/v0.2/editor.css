@@ -1,0 +1,46 @@
+
+
+
+/*
+    Remember to style the fonts to suit the website
+*/
+
+
+
+
+/*<body>*/
+body
+{
+    margin: 0;
+}
+/*</body>*/
+
+/*<overlays>*/
+#overlay
+{
+    z-index: 100;
+    background-color: rgba(0,0,0,0.7);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+/*</overlays>*/
+
+/*<editor>*/
+h3
+{
+    margin: 0px;
+    padding-bottom: 10px;
+}
+#editor
+{
+    padding: 10px;
+}
+#txtarea
+{
+    margin: 10px;
+    border: 1px solid #09c;
+    padding: 0px 10px;
+}
+/*</editor>*/
